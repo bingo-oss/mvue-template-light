@@ -1,0 +1,16 @@
+{
+  "oauth2.serverVersion": "v3",
+  "oauth2.serverUrl": "https://developer.bingosoft.net:12100/ssov3",
+  "oauth2.flow": "implicit",
+  "oauth2.clientId": "console",
+  "oauth2.clientSecret":"gw_rest_api_secret",
+
+  "apiBaseUrl": "https://developer.bingosoft.net:12000/mvue_engine",
+  "userApiUrl": "https://developer.bingosoft.net:12100/services/tool/user",
+  "orgApiUrl": "https://developer.bingosoft.net:12100/services/tool/organization",
+
+  "service.stream.endpoint": "https://developer.bingosoft.net:12100/services/stream",
+  "service.tool.endpoint": "https://developer.bingosoft.net:12100/services/tool",
+  "service.metabase.endpoint": "https://developer.bingosoft.net:12100/services/metaservice",
+  "service.gateway.endpoint": "https://developer.bingosoft.net:12100"
+}
