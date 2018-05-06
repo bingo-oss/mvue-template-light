@@ -72,8 +72,9 @@ export default {
   },
   mounted: function () {
     this.user = mvueCore.session.getCurrentUser();
-    channelService.get().then(function ({data}) {
+    channelService.get({id:"005740cb-8d6e-4148-a71e-a436d9e2d6ce"}).then(function ({data}) {
       console.log(JSON.stringify(data));
+      channelService.update({id:data.id},{title:data.title});
     })
   },
   components: {
