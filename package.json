@@ -34,7 +34,7 @@
     "iview": "^2.7.4",
     "qs": "^6.5.2",
     "axios": "^0.18.0",
-    "mvue-toolkit": "^0.0.1"
+    "mvue-toolkit": "^0.0.3"
   },
   "devDependencies": {
     "vue-html-loader": "^1.2.4",

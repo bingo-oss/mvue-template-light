@@ -107,9 +107,9 @@ module.exports = {
   },
   plugins: [
     //非常酷的插件，自动浏览器预览最后生成的js boundles的内容
-    /*new BundleAnalyzerPlugin({
-     analyzerMode: 'static'
-     }),*/
+    // new BundleAnalyzerPlugin({
+    //  analyzerMode: 'static'
+    //  }),
     //webpack在require动态路径时会加载整个目录的文件作为模块，这个插件可以限定要引入的模块
     new webpack.ContextReplacementPlugin(
       /moment[\/\\]locale$/,
