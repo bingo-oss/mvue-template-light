@@ -1,12 +1,12 @@
 <template>
   <div  class="layout">
     <div class="layout-header clearfix">
-      <div class="layout-logo">Web轻应用开发模板</div>
+      <div class="layout-logo">Web轻应用开发示例</div>
       <div class="layout-header-menu clearfix">
         <Menu mode="horizontal" theme="primary" >
           <MenuItem name="1">
             <Icon type="home"></Icon>
-            <router-link to="/" tag="span">主页</router-link>
+            <span @click="gotoIndex">主页</span>
           </MenuItem>
           <MenuItem name="2">
             <Icon type="gear-b"></Icon>
@@ -69,12 +69,12 @@ export default {
     gotoMb: function () {
       router.push({name: ""});
     },
-    gotoExample:function () {
-      window.location.href="./example.html";
-    },
-    gotoIndex:function () {
-      window.location.href="./index.html";
-    }
+  gotoExample:function () {
+    window.location.href="./example.html";
+  },
+  gotoIndex:function () {
+    window.location.href="./index.html";
+  }
   },
   mounted: function () {
     this.user = mvueCore.session.getCurrentUser();
