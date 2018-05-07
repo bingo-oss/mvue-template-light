@@ -1,12 +1,12 @@
 var homeMenu = [
   {
-    title: '工作台',
+    title: '轻用开发',
     id: "0000",
     icon: 'ivu-icon ivu-icon-ios-home',
     children: [
       {
         id: "0001",
-        title: '活动管理(默认)',
+        title: '功能1',
         icon: 'iconfont icon-order',
         link: {
           name:"activityList"
@@ -14,7 +14,7 @@ var homeMenu = [
       },
       {
         id: "0002",
-        title: '频道管理(自定义)',
+        title: '功能2',
         icon: 'iconfont icon-order',
         link: {
           name: 'channelList'
