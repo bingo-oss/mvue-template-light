@@ -13,7 +13,6 @@ routers.push(
     }
 );
 
-debugger;
 var routersData = mvueCore.router.getModuleRoutes("example", routers,function (component) {
   return require('src/module/example/view/' + component);
 });
