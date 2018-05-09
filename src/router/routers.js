@@ -12,9 +12,6 @@ var data = [
     component: "home/home.vue",
   },
   {
-    meta: {
-      module: "default"
-    },
     name: "ssoclient",
     component: "common/ssoclient.vue",
     path: "/ssoclient"
