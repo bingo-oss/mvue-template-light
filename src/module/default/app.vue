@@ -20,5 +20,6 @@
 @import "~sass/common";
 @import "~sass/base/aminate.min";
 @import "~sass/app_common.scss";
+  #app{height: 100%;display: flex}
 </style>
 

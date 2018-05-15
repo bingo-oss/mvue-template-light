@@ -1,48 +1,7 @@
 <template>
-  <div  class="layout">
-    <div class="layout-header clearfix">
-      <div class="layout-logo">Web轻应用开发示例</div>
-      <div class="layout-header-menu clearfix">
-        <Menu mode="horizontal" theme="primary" >
-          <MenuItem name="1">
-            <Icon type="home"></Icon>
-            <span @click="gotoIndex">主页</span>
-          </MenuItem>
-          <MenuItem name="2">
-            <Icon type="gear-b"></Icon>
-            <span @click="gotoExample">轻应用示例</span>
-          </MenuItem>
-
-          <Submenu name="3">
-            <template slot="title">
-              <Avatar shape="square" icon="person" size="small" />
-              {{user.name}}
-            </template>
-            <MenuGroup title="用户">
-              <MenuItem name="3-1">基本信息</MenuItem>
-              <MenuItem name="3-2">操作日志</MenuItem>
-              <MenuItem name="3-3">配置管理</MenuItem>
-            </MenuGroup>
-            <MenuGroup title="系统">
-              <MenuItem name="3-4"><span @click="logout">退出</span></MenuItem>
-            </MenuGroup>
-          </Submenu>
-        </Menu>
-      </div>
-    </div>
-    <div class="layout-content">
-      <Row>
-        <Col span="4">
-          <navbar :menus="menu" @shrinkNavBar="doShrink"></navbar>
-      </Col>
-        <Col span="20">
-        <div class="layout-content-main">
-          <router-view>
-          </router-view>
-        </div>
-        </Col>
-      </Row>
-    </div>
+  <div class="layout">
+    <router-view>
+    </router-view>
   </div>
 </template>
 <script>
@@ -52,29 +11,11 @@
 export default {
   data: function () {
     return {
-      shrinkNavBar: false,
-      menu: menu,
-      user: {
-        name: ""
-      }
-    };
+
+    }
   },
   methods: {
-    doShrink: function (shrinkNavBar) {
-      this.shrinkNavBar = shrinkNavBar;
-    },
-    logout: function () {
-      mvueCore.session.doLogout();
-    },
-    gotoMb: function () {
-      router.push({name: ""});
-    },
-  gotoExample:function () {
-    window.location.href="./example.html";
-  },
-  gotoIndex:function () {
-    window.location.href="./index.html";
-  }
+
   },
   mounted: function () {
     this.user = mvueCore.session.getCurrentUser();
@@ -84,39 +25,31 @@ export default {
     })
   },
   components: {
-    navbar: require('components/nav_bar'),
+
   }
 }
 </script>
 <style lang="scss">
   .layout{
-    border: 1px solid #d7dde4;
-    background: #f5f7f9;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
-  .layout-logo{
-    height: 30px;
-    border-radius: 3px;
-    float: left;
-    position: relative;
-    top: 15px;
-    left: 20px;
-    color: #ffffff;
-    font-size: 20px;
+  .flex1{
+    flex: 1;
+  }
+  .flex-column{
+    display: flex;
+    flex-direction: column;
+  }
+  .flex-row{
+    display: flex;
+    flex-direction: row;
   }
   .layout-header{
-    background:  #017fe1;
-    box-shadow: 0 1px 1px rgba(0,0,0,.1);
-  }
-
-  .layout-header-menu{
-    float: right;
-    margin-right: 15px;
-  }
-  .layout-header-menu a{
-    color: #9ba7b5;
-  }
-  .layout-header-menu .ivu-menu-submenu-title span>i{
-    margin-right: 2px;
+    border-bottom: 1px solid #dddee1;
+    padding: 20px;
   }
 
   .layout-content{
@@ -126,8 +59,19 @@ export default {
     background: #fff;
     border-radius: 4px;
   }
-  .layout-content-main{
-    padding: 0px;
+  .fs14{
+    font-size: 14px;
+  }
+
+  .mt20{
+    margin-top: 20px;
+  }
+  .m20{
+    margin: 20px;
+  }
+  .fs{
+    font-size: 14px;
+    color: #888888;
   }
 
   .clearfix:after {
