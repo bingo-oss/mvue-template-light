@@ -10,6 +10,14 @@ var data = [
     name: "default",
     path: "/",
     component: "home/home.vue",
+    redirect:{name:"exampleList"},
+    children:[
+      {
+        name: 'exampleList',
+        path: 'example_list',
+        component: 'home/example_list',
+      }
+    ]
   },
   {
     name: "ssoclient",

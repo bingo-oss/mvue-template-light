@@ -14,8 +14,6 @@
   </div>
 </template>
 <script>
-  import  channelService from "src/services/example/channel_service";
-
 export default {
   data: function () {
     return {

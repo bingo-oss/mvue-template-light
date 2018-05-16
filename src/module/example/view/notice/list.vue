@@ -4,7 +4,6 @@
   </div>
 </template>
 <script>
-  import  channelService from "src/services/example/channel_service";
 
 export default {
   data: function () {
@@ -131,9 +130,7 @@ export default {
       this.$router.push({name: 'notice-detail', params: {id: index}});
     },
     getData (){
-      console.log(555);
-      if(this.$route.params.clasId == 'all') this.dataNew =  this.data;
-      else this.dataNew =  [];
+      this.dataNew =  this.data;
     }
   },
   mounted: function () {

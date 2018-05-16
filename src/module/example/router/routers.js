@@ -13,12 +13,12 @@ routers.push(
       children: [
         {
           name: 'notice',
-          path: 'notice',
+          path: '/notice',
           component: 'notice/index.vue',
           children: [
             {
               name: 'notice-clas',
-              path: 'clas/:clasId',
+              path: 'clas',
               component: 'notice/clas.vue',
               children: [
                 {
