@@ -1,129 +1,114 @@
 <template>
   <div  class="layout">
-    <div class="layout-header clearfix">
-      <div class="layout-logo">Web轻应用开发模板</div>
-      <div class="layout-header-menu clearfix">
-        <Menu mode="horizontal" theme="primary" >
-          <MenuItem name="1">
-            <Icon type="home"></Icon>
-            <router-link to="/" tag="span">主页</router-link>
-          </MenuItem>
-          <MenuItem name="2">
-            <Icon type="gear-b"></Icon>
-            <span @click="gotoExample">轻应用示例</span>
-          </MenuItem>
-
-          <Submenu name="3">
-            <template slot="title">
-              <Avatar shape="square" icon="person" size="small" />
-              {{user.name}}
-            </template>
-            <MenuGroup title="用户">
-              <MenuItem name="3-1">基本信息</MenuItem>
-              <MenuItem name="3-2">操作日志</MenuItem>
-              <MenuItem name="3-3">配置管理</MenuItem>
-            </MenuGroup>
-            <MenuGroup title="系统">
-              <MenuItem name="3-4"><span @click="logout">退出</span></MenuItem>
-            </MenuGroup>
-          </Submenu>
-        </Menu>
-      </div>
-    </div>
     <div class="layout-content">
-      <Row>
-        <Col span="4">
-          <navbar :menus="menu" @shrinkNavBar="doShrink"></navbar>
-      </Col>
-        <Col span="20">
-        <div class="layout-content-main">
-          <router-view>
-          </router-view>
-        </div>
-        </Col>
-      </Row>
+      <div class="layout-content-main">
+        <Tabs :animated="false" active-key="key1">
+          <Tab-pane v-for="(value, index) in dataApp" :label="value.title" :key="'key'+index">
+            <Carousel autoplay class="mb20" v-if="index == 0">
+              <Carousel-item v-for="(v, i) in data" :key="i">
+                <div class="demo-carousel textalignC">
+                  <img :src='v.src' />
+                </div>
+              </Carousel-item>
+            </Carousel>
+            <Row>
+              <Col span="4" v-for="(values, indexs) in value.app" :key="indexs">
+                <div class="app-box" @click="gotoExample(values.name)">
+                  <div class="app-pic">
+                    <Icon size="60" color="#ffffff" :type="values.icon"></Icon>
+                  </div>
+                  <h5 class="textalignC">{{values.title}}</h5>
+                </div>
+              </Col>
+            </Row>
+          </Tab-pane>
+        </Tabs>
+      </div>
     </div>
   </div>
 </template>
 <script>
   import  channelService from "src/services/example/channel_service";
-  import menu from "../../menu/menu";
 
 export default {
   data: function () {
     return {
-      shrinkNavBar: false,
-      menu: menu,
-      user: {
-        name: ""
-      }
+      data: [
+        {
+          src: require('../../../../images/carousel/1.jpeg')
+        },{
+          src: require('../../../../images/carousel/2.jpeg')
+        }
+      ],
+      dataApp: [
+        {
+          title: '办公精选',
+          app: [
+            {
+              name: 'notice',
+              title: '公告',
+              icon: 'speakerphone'
+            },
+            {
+              name: 'approve',
+              title: '审批',
+              icon: 'person-stalker'
+            }
+          ]
+        },
+        {
+          title: '财务精选',
+          app: [
+            {
+              name: 'log',
+              title: '日志',
+              icon: 'pie-graph'
+            }
+          ]
+        },
+      ]
     };
   },
   methods: {
-    doShrink: function (shrinkNavBar) {
-      this.shrinkNavBar = shrinkNavBar;
-    },
-    logout: function () {
-      mvueCore.session.doLogout();
-    },
-    gotoMb: function () {
-      router.push({name: ""});
-    },
-    gotoExample:function () {
-      window.location.href="./example.html";
-    },
-    gotoIndex:function () {
-      window.location.href="./index.html";
+
+    gotoExample:function (name) {
+      if(name == 'log'){
+        console.log(111111);
+        window.location.href=`./example.html#/${name}/list`
+      }else if(name == 'approve'){
+        window.location.href=`./example.html#/${name}/initiate`
+      }
+      // "./example.html#/notice/clas/all/list";
+      else {
+        window.location.href="./example.html#/notice/clas/all/list";
+      }
     }
   },
   mounted: function () {
-    this.user = mvueCore.session.getCurrentUser();
+    // this.user = mvueCore.session.getCurrentUser();
     channelService.get({id:"005740cb-8d6e-4148-a71e-a436d9e2d6ce"}).then(function ({data}) {
       console.log(JSON.stringify(data));
       channelService.update({id:data.id},{title:data.title});
     })
   },
   components: {
-    navbar: require('components/nav_bar'),
+
   }
 }
 </script>
 <style lang="scss">
+  .mb20{
+    margin-bottom: 20px;
+  }
   .layout{
+    flex: 1;
     border: 1px solid #d7dde4;
     background: #f5f7f9;
+    overflow: hidden;
   }
-  .layout-logo{
-    height: 30px;
-    border-radius: 3px;
-    float: left;
-    position: relative;
-    top: 15px;
-    left: 20px;
-    color: #ffffff;
-    font-size: 20px;
-  }
-  .layout-header{
-    background:  #017fe1;
-    box-shadow: 0 1px 1px rgba(0,0,0,.1);
-  }
-
-  .layout-header-menu{
-    float: right;
-    margin-right: 15px;
-  }
-  .layout-header-menu a{
-    color: #9ba7b5;
-  }
-  .layout-header-menu .ivu-menu-submenu-title span>i{
-    margin-right: 2px;
-  }
-
   .layout-content{
-    min-height: 200px;
     margin: 0px;
     overflow: hidden;
-    background: #fff;
     border-radius: 4px;
   }
   .layout-content-main{
@@ -140,6 +125,35 @@ export default {
   }
   .clearfix {
     zoom: 1;
+  }
+
+  .ivu-tabs-nav-scroll{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .ivu-tabs-nav{
+    float: none;
+  }
+  .ivu-tabs-nav .ivu-tabs-tab{
+    padding: 16px 30px;
+    font-size: 16px;
+  }
+  .app-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .app-pic{
+    background-color: deepskyblue;
+    border-radius: 10px;
+    padding: 20px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>
 
