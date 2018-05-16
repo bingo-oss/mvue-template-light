@@ -36,7 +36,7 @@
         </div>
       </Poptip>
     </div>
-    <Tabs class="flex-column flex1" active-key="key1" type="card">
+    <Tabs id="mvue-tab" class="flex-column flex1" active-key="key1" type="card">
       <Tab-pane v-for="(item, index) in tabItem" :label="item.title" :key="index">
         <div class="nodatas flex-column" v-if="item.lists.length === 0">
           <img :src="imgurl">
@@ -268,39 +268,32 @@ export default {
 }
 </script>
 <style lang="scss">
-  .ivu-menu-item, .ivu-tabs-nav .ivu-tabs-tab{
-    font-size: 12px;
-  }
-  .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu{
-    color: lightslategray;
-  }
-  .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item:hover, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu:hover{
-    color: #2d8cf0;
-    border-bottom: 2px solid #2d8cf0;
-  }
-  .ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab{
-    color: darkgray;
-  }
-  .ivu-tabs-bar{border-bottom: none;}
-  .ivu-tabs.ivu-tabs-card>.ivu-tabs-bar .ivu-tabs-tab{
+   #mvue-tab .ivu-tabs-nav .ivu-tabs-tab{
+      font-size: 12px;
+   }
+   #mvue-tab .ivu-tabs-bar{border-bottom: none;}
+   #mvue-tab.ivu-tabs.ivu-tabs-card>.ivu-tabs-bar .ivu-tabs-tab{
     border: 1px solid #dddee1;
     border-radius: 4px;
     padding: 5px 16px;
     height: 32px;
     background: #ffffff;
   }
-  .ivu-tabs.ivu-tabs-card>.ivu-tabs-bar .ivu-tabs-tab-active{
+   #mvue-tab.ivu-tabs.ivu-tabs-card>.ivu-tabs-bar .ivu-tabs-tab-active{
     background: #2d8cf0;
     color: #ffffff;
   }
-  .ivu-tabs .ivu-tabs-content-animated{
+   #mvue-tab.ivu-tabs .ivu-tabs-content-animated{
     flex: 1;
   }
-  .ivu-tabs .ivu-tabs-tabpane{
+   #mvue-tab.ivu-tabs .ivu-tabs-tabpane{
     overflow-y: auto;
     display: flex;
     flex-direction: column;
   }
+   #mvue-tab.ivu-tabs.special .ivu-tabs-tabpane{
+     overflow-y: visible;
+   }
   .layout-scroll{
     width: 100%;
   }

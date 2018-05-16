@@ -28,13 +28,9 @@
     </i-form>
     <div class="layout-header flex-column flex1">
       <div>选择模版 <span class="gray">(当前模版为： {{moduleTitle}})</span></div>
-      <Tabs class="flex-column flex1 mt20" active-key="key1" type="card" @on-click="tagClickFn">
+      <Tabs id="mvue-tab" class="special flex-column flex1 mt20" active-key="key1" type="card" @on-click="tagClickFn">
         <Tab-pane v-for="(item, index) in tabItem" :label="item.title" :key="index">
-          <div class="layout-scroll">
-            <div class="">
-              <router-view></router-view>
-            </div>
-          </div>
+          <router-view></router-view>
         </Tab-pane>
       </Tabs>
     </div>

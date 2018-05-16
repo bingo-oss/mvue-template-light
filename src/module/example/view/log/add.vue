@@ -1,7 +1,7 @@
 <template>
   <div class="m20 flex-column flex1 po-r">
     <div>选择模版 <span class="gray">(当前模版为： {{moduleTitle}})</span></div>
-    <Tabs class="flex-column flex1 mt20" active-key="key1" type="card" @on-click="tagClickFn">
+    <Tabs id="mvue-tab" class="flex-column flex1 mt20" active-key="key1" type="card" @on-click="tagClickFn">
       <Tab-pane v-for="(item, index) in tabItem" :label="item.title" :key="index">
         <div class="layout-scroll">
           <div class="">

@@ -1,6 +1,6 @@
 <template>
-  <div class="layout-bg">
-    <ul id="mvue-menu" class="ivu-menu ivu-menu-light ivu-menu-horizontal">
+  <div class="layout">
+    <ul id="mvue-menu-row-flex" class="ivu-menu ivu-menu-light ivu-menu-horizontal">
       <li class="ivu-menu-item" :class="[(activekey == index) ? 'ivu-menu-item-active':'']" v-for="(item, index) in menuItem" :key="index" @click="goTo(index, item.name)">{{item.title}}</li>
     </ul>
     <div class="flex1 flex-column">
@@ -16,21 +16,25 @@ export default {
     return {
       menuItem: [
         {
-          title: '看日志',
-          name: 'log-list'
+          title: '发起审批',
+          name: 'approve-initiate'
         },
         {
-          title: '写日志',
-          name: 'log-add'
+          title: '待我审批的',
+          name: 'approve-waitting'
         },
         {
-          title: '日志报表',
-          name: 'log-report'
+          title: '我已审批的',
+          name: 'approve-done'
         },
         {
-          title: '模版管理',
-          name: 'log-module'
+          title: '我发起的',
+          name: 'approve-started'
         },
+        {
+          title: '抄送我的',
+          name: 'approve-copy'
+        }
       ],
       activekey: 0
     };
@@ -58,26 +62,22 @@ export default {
 }
 </script>
 <style lang="scss">
-  .layout-bg{
-    background-color: #f5f7f9;
-    flex: 1;
-    overflow: hidden;
+  #mvue-menu-row-flex.ivu-menu-light{
     display: flex;
-    flex-direction: column;
-  }
-
-  #mvue-menu.ivu-menu-light{
+    flex-direction: row;
     background: transparent;
   }
-  #mvue-menu .ivu-menu-item{
-    font-size: 12px;
+  #mvue-menu-row-flex .ivu-menu-item{
+    text-align: center;
+    flex: 1;
   }
-  #mvue-menu.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item, #mvue-menu.ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu{
+  #mvue-menu-row-flex.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item, #mvue-menu-row-flex.ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu{
     color: lightslategray;
   }
-  #mvue-menu.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item-active, #mvue-menu.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item:hover, #mvue-menu.ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu-active, #mvue-menu.ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu:hover{
+  #mvue-menu-row-flex.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item-active, #mvue-menu-row-flex.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item:hover, #mvue-menu-row-flex.ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu-active, #mvue-menu-row-flex.ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu:hover{
     color: #2d8cf0;
     border-bottom: 2px solid #2d8cf0;
+    font-weight: bold;
   }
 </style>
 

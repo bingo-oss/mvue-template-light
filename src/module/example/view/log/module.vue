@@ -1,10 +1,10 @@
 <template>
   <div class="m20 flex-column flex1 po-r">
 
-    <div class="layout-scroll">
-      <div class="layout-content-box-list flex-column">
+    <ul class="layout-flow-box layout-scroll clearfix">
+      <li class="flex-column">
         <div class="layout-c-title flex-row">
-          <span>月</span>
+          <span class="circle">月</span>
           <h5>月报</h5>
         </div>
         <div class="layout-c-content flex1">
@@ -15,10 +15,10 @@
         <div class="layout-c-footer flex-row flex1">
           <span class="flex1">2018-05-08 14:48</span><a href="javascript:void(0);">删除</a><a href="javascript:void(0);">修改</a>
         </div>
-      </div>
-      <div class="layout-content-box-list flex-column">
+      </li>
+      <li class="flex-column">
         <div class="layout-c-title flex-row">
-          <span>周</span>
+          <span class="circle">周</span>
           <h5>周报</h5>
         </div>
         <div class="layout-c-content flex1">
@@ -29,10 +29,10 @@
         <div class="layout-c-footer flex-row flex1">
           <span class="flex1">2018-05-08 14:48</span><a href="javascript:void(0);">删除</a><a href="javascript:void(0);">修改</a>
         </div>
-      </div>
-      <div class="layout-content-box-list flex-column">
+      </li>
+      <li class="flex-column">
         <div class="layout-c-title flex-row">
-          <span>日</span>
+          <span class="circle">日</span>
           <h5>日报</h5>
         </div>
         <div class="layout-c-content flex1">
@@ -43,8 +43,8 @@
         <div class="layout-c-footer flex-row flex1">
           <span class="flex1">2018-05-08 14:48</span><a href="javascript:void(0);">删除</a><a href="javascript:void(0);">修改</a>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
 
   </div>
 </template>
@@ -227,20 +227,12 @@
   }
 </script>
 <style lang="scss">
-  .layout-content-box-list{
-    border: 1px solid #dddee1;
-    border-radius: 5px;
-    width: 300px;
-    float: left;
-    margin-right: 15px;
-    margin-bottom: 15px;
-  }
   .layout-c-title{
     border-bottom: 1px solid #dddee1;
     margin: 15px;
     padding-bottom: 15px;
   }
-  .layout-c-title span{
+  .circle{
     border-radius: 15px;
     display: inline-block;
     width: 40px;

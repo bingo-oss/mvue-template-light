@@ -1,8 +1,11 @@
 <template>
-  <div class="report">
-    <div class="textalignR"><a class="a-style-none" href="javascript:void(0)" @click="scv">导出</a></div>
-    <Table class="mt20" ref="table" :columns="columns" :data="dataNew" border></Table>
+  <div class="report flex-column flex1">
+    <div class="textalignR mb20"><a class="a-style-none" href="javascript:void(0)" @click="scv">导出</a></div>
+    <div class="layout-scroll overflow-y flex1">
+        <Table ref="table" :columns="columns" :data="dataNew" border></Table>
+    </div>
   </div>
+
 </template>
 <script>
   import  channelService from "src/services/example/channel_service";

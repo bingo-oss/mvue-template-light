@@ -48,6 +48,11 @@ export default {
               name: 'notice',
               title: '公告',
               icon: 'speakerphone'
+            },
+            {
+              name: 'approve',
+              title: '审批',
+              icon: 'person-stalker'
             }
           ]
         },
@@ -70,6 +75,8 @@ export default {
       if(name == 'log'){
         console.log(111111);
         window.location.href=`./example.html#/${name}/list`
+      }else if(name == 'approve'){
+        window.location.href=`./example.html#/${name}/initiate`
       }
       // "./example.html#/notice/clas/all/list";
       else {

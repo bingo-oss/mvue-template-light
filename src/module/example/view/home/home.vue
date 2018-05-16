@@ -66,6 +66,7 @@ export default {
   .mt20{
     margin-top: 20px;
   }
+  .mb20{ margin-bottom: 20px;}
   .m20{
     margin: 20px;
   }
@@ -73,7 +74,33 @@ export default {
     font-size: 14px;
     color: #888888;
   }
+  .overflow-y{
+    overflow-y: auto;
+  }
 
+  /*流水布局 元素默认宽度300*/
+  .layout-flow-box li{
+    border: 1px solid #dddee1;
+    border-radius: 5px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 300px;
+  }
+  /*图标圆圈*/
+  .layout-c-title .circle{
+    border-radius: 15px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #2d8cf0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    margin-right: 15px;
+  }
   .clearfix:after {
     content: "";
     height: 0;
