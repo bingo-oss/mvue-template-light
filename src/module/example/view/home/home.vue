@@ -6,7 +6,6 @@
 </template>
 <script>
   import  channelService from "src/services/example/channel_service";
-  import menu from "../../menu/menu";
 
 export default {
   data: function () {

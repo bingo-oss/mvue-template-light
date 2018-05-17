@@ -104,7 +104,7 @@ export default {
     handleSubmit (name) {
       this.$refs[name].validate((valid) => {
         if (valid) {
-          this.$router.push({path: '/notice/clas/all/list'});
+          this.$router.push({path: '/notice/clas/list'});
         } else {
           this.$Message.error('表单验证失败!');
         }
