@@ -2,15 +2,13 @@
   <div class="layout-header overflow-y flex1">
     <i-input icon="ios-search" placeholder="请搜索要发起的审批单" v-model="searchText" style="width: 300px"></i-input>
     <Collapse id="mvue-collapse" class="mt20" active-key="1">
-      <Panel :key="index" v-for="(item, index) in filterItems">
+      <Panel :key="index" v-for="(item, index) in menuItem">
         {{item.title}}<span class="gray" v-if="item.lists">({{item.lists.length}})</span>
         <div slot="content">
           <ul class="layout-flow-box special-width clearfix">
             <li class="flex-row" :key="indexs" v-for="(items, indexs) in item.lists">
-              <!--<div class="layout-c-title flex-row">-->
-                <Icon class="circle" :type="items.icon"></Icon>
-                <h5>{{items.name}}</h5>
-              <!--</div>-->
+              <Icon class="circle" :type="items.icon"></Icon>
+              <h5>{{items.name}}</h5>
             </li>
           </ul>
         </div>
@@ -106,25 +104,13 @@ export default {
             }
           ]
         },
-      ],
-      activekey: 0
+      ]
     };
   },
   methods: {
-    customFilter: function(item) {
-      return item.name.indexOf(this.searchText) != -1;
-    },
+
   },
   computed: {
-    filterItems (){
-      return this.menuItem.filter((item) => {
-
-        item.lists.map((value) => {
-          return value.name.indexOf(this.searchText) !== -1
-        })
-
-      })
-    }
   },
   mounted: function () {
     // this.btn();
@@ -164,6 +150,11 @@ export default {
     padding: 15px;
     margin-left: 0;
     margin-right: 15px;
+    cursor: pointer;
+    background: #ffffff;
+  }
+  .special-width li:hover{
+    background: ghostwhite;
   }
   .special-width .circle{
     border-radius: 5px;

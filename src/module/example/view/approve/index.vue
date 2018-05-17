@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <ul id="mvue-menu-row-flex" class="ivu-menu ivu-menu-light ivu-menu-horizontal">
-      <li class="ivu-menu-item" :class="[(activekey == index) ? 'ivu-menu-item-active':'']" v-for="(item, index) in menuItem" :key="index" @click="goTo(index, item.name)">{{item.title}}</li>
+      <li class="ivu-menu-item" :class="[(activekey == index) ? 'ivu-menu-item-active':'']" v-for="(item, index) in menuItem" :key="index" @click="goTo(index, item.name)">{{item.title}}<Badge :count="item.count"></Badge></li>
     </ul>
     <div class="flex1 flex-column">
       <router-view></router-view>
@@ -21,7 +21,8 @@ export default {
         },
         {
           title: '待我审批的',
-          name: 'approve-waitting'
+          name: 'approve-waitting',
+          count: 1
         },
         {
           title: '我已审批的',
@@ -48,13 +49,9 @@ export default {
 
   },
   mounted: function () {
-    // this.btn();
 
   },
   watch: {
-    '$route' (to, from){
-      // this.btn();
-    }
   },
   components: {
 

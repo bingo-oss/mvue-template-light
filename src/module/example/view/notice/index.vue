@@ -35,8 +35,6 @@ export default {
     },
     btn (){
       const url = this.$route;
-      console.log(6666);
-      console.log(url);
       if(url.name == 'notice-list'){
         this.addNoticeMoudle = true;
         this.addNotice = true;

@@ -99,29 +99,22 @@ routers.push(
             {
               name: 'approve-waitting',
               path: 'waitting',
-              component: 'approve/report.vue',
-              children: [
-                {
-                  name: 'log-report-table',
-                  path: 'report-table',
-                  component: 'log/report-table.vue',
-                }
-              ]
+              component: 'approve/waitting.vue'
             },
             {
               name: 'approve-done',
               path: 'done',
-              component: 'approve/add.vue',
+              component: 'approve/waitting.vue',
             },
             {
               name: 'approve-started',
               path: 'started',
-              component: 'approve/module.vue',
+              component: 'approve/waitting.vue',
             },
             {
               name: 'approve-copy',
               path: 'copy',
-              component: 'approve/module.vue',
+              component: 'approve/waitting.vue',
             }
           ]
         }

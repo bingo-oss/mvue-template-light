@@ -70,12 +70,24 @@ export default {
   .m20{
     margin: 20px;
   }
+  .ml15{
+    margin-left: 15px;
+  }
   .fs{
     font-size: 14px;
     color: #888888;
   }
+  .width75{
+    width: 75px;
+  }
+  .width200{
+    width: 200px;
+  }
   .overflow-y{
     overflow-y: auto;
+  }
+  .line-bottom{
+    border-bottom: 1px solid #dddee1;
   }
 
   /*流水布局 元素默认宽度300*/
@@ -86,6 +98,10 @@ export default {
     margin-right: 15px;
     margin-bottom: 15px;
     width: 300px;
+    transition: background-color .2s linear,border .2s linear;
+  }
+  .layout-flow-box li:hover{
+    border-color: lightblue;
   }
   /*图标圆圈*/
   .layout-c-title .circle{
