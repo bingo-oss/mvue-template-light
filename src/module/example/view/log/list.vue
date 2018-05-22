@@ -317,15 +317,7 @@ export default {
   .layout-c-c-b{
     line-height: 22px;
   }
-  .gray{
-    color: darkgray;
-  }
-  .nodatas{
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    background: #ffffff;
-  }
+
   .po-r{
     position: relative;
   }

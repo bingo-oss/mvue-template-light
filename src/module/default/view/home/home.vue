@@ -65,11 +65,6 @@
 
   /*流水布局 元素默认宽度300*/
   .layout-flow-box li{
-    border: 1px solid #dddee1;
-    border-radius: 5px;
-    float: left;
-    margin-right: 15px;
-    margin-bottom: 15px;
     width: 300px;
   }
   /*图标圆圈*/

@@ -32,7 +32,7 @@
               <i-button type="ghost">审批中</i-button>
               <i-button type="ghost">已撤消</i-button>
             </Button-group>
-            <Checkbox v-if="selectBox" class="ml15" :checked.sync="single">仅未读</Checkbox>
+            <Checkbox v-if="selectBox" class="ml15">仅未读</Checkbox>
             <a v-if="selectBox" class="gray" href="javascript:void(0)">全部标记为已读</a>
           </div>
         </div>
