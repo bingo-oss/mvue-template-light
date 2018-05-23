@@ -4,7 +4,7 @@
       <div class="layout-content-main flex-column flex1">
         <Tabs id="list-tabs" :animated="false" active-key="key1">
           <Tab-pane v-for="(value, index) in dataApp" :label="value.title" :key="'key'+index">
-            <Carousel autoplay autoplay-speed="5000" class="mb20" v-if="index == 0">
+            <Carousel autoplay :autoplay-speed=5000 class="mb20" v-if="index == 0">
               <Carousel-item v-for="(v, i) in data" :key="i">
                 <div class="demo-carousel textalignC">
                   <img :src='v.src' />
