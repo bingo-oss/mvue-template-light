@@ -18,6 +18,7 @@
                 <i-button @click="goto('config')" size="large" type="primary" icon="ios-cog">应用配置</i-button>
                 <i-button @click="goto('api')" size="large" type="primary" icon="network">接口调用</i-button>
                 <i-button @click="goto('sso')" size="large" type="primary" icon="disc">单点登录</i-button>
+                <i-button @click="gotoIview()" size="large" type="primary" icon="ios-heart">iview组件库</i-button>
               </div>
               <h2><Icon type="ios-keypad"></Icon> 示例展示</h2>
               <ul class="layout-flow-box clearfix">
@@ -95,6 +96,9 @@
       goto: function (name) {
         window.open(`http://dev.bingocc.com/mvue/light/${name}.html`)
       },
+      gotoIview: function(){
+        window.open(`http://v1.iviewui.com/docs/guide/install`)
+      }
     },
     mounted: function () {
       // this.user = mvueCore.session.getCurrentUser();
