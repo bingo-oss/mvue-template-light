@@ -5,7 +5,7 @@ routers.push(
     {
       meta: {
         module: "example",
-        requiresAuth: true
+        requiresAuth: false
       },
       name: "exampleIndex",
       path: "/",
