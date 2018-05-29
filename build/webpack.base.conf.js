@@ -60,7 +60,7 @@ module.exports = {
         test: /\.js$/,
         exclude: _excludes,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'),resolve('node_modules/.mvue-toolkit')]
+        include: [resolve('src'), resolve('test'),resolve('node_modules/.mvue-toolkit'),resolve('node_modules/_mvue-toolkit')]
       },
       // {
       //   test: /\.html$/,
