@@ -72,7 +72,7 @@ module.exports = {
         exclude: _excludes,
         options: {
           limit: 10000,
-          publicPath:process.env.NODE_ENV === 'production'?'../img/':utils.assetsPath('img/'),
+          publicPath:process.env.NODE_ENV === 'production'?'./static/img/':utils.assetsPath('img/'),
           outputPath:utils.assetsPath('img/'),
           name: '[name].[hash:7].[ext]'
         }
