@@ -86,11 +86,11 @@
 
       gotoExample:function (name) {
         if(name == 'log'){
-          window.location.href=`./example.html#/${name}/list`
+          window.open(`./example.html#/${name}/list`);
         }else if(name == 'approve'){
-          window.location.href=`./example.html#/${name}/initiate`
+          window.open(`./example.html#/${name}/initiate`);
         }else {
-          window.location.href="./example.html#/notice/clas/list";
+          window.open("./example.html#/notice/clas/list");
         }
       },
       goto: function (name) {
